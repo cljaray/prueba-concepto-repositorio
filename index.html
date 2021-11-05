@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+  </head>
+  <body>
+    <il id="messages"></il>
+    
+    <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+  
+    var messages = document.getElementById('messages');
+  
+    socket.on('cambiaValor', function(msg) {
+        console.log(msg.valor)
+        messages.innerHTML = msg.valor
+    });
+  </script>
+  </body>
+</html>
